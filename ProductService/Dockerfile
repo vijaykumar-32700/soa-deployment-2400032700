@@ -1,5 +1,5 @@
 # Stage 1: Build Spring Boot application
-FROM eclipse-temurin:21-jdk AS build
+FROM eclipse-temurin:21-jdk-jammy AS build
 
 WORKDIR /app
 
@@ -19,7 +19,7 @@ RUN ./mvnw clean package -DskipTests
 
 
 # Stage 2: Run Spring Boot application
-FROM eclipse-temurin:21-jre
+FROM eclipse-temurin:21-jre-jammy
 
 WORKDIR /app
 EXPOSE 8002

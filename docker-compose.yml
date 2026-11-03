@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: docker
       POSTGRES_DB: projectdb
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -23,7 +23,7 @@ services:
       - microservices-network
 
   eureka-server:
-    image: suryakiran1993/eureka-server:latest
+    image: vijaykumar04/eureka-server:latest
     build:
       context: ./EurekaServer
       dockerfile: Dockerfile
@@ -35,7 +35,7 @@ services:
       - microservices-network
 
   api-gateway:
-    image: suryakiran1993/api-gateway:latest
+    image: vijaykumar04/api-gateway:latest
     build:
       context: ./APIGateway
       dockerfile: Dockerfile
@@ -52,7 +52,7 @@ services:
       - microservices-network
 
   user-service:
-    image: suryakiran1993/user-service:latest
+    image: vijaykumar04/user-service:latest
     build:
       context: ./UserService
       dockerfile: Dockerfile
@@ -69,7 +69,7 @@ services:
       - microservices-network
 
   product-service:
-    image: suryakiran1993/product-service:latest
+    image: vijaykumar04/product-service:latest
     build:
       context: ./ProductService
       dockerfile: Dockerfile
@@ -86,7 +86,7 @@ services:
       - microservices-network
 
   order-service:
-    image: suryakiran1993/order-service:latest
+    image: vijaykumar04/order-service:latest
     build:
       context: ./OrderService
       dockerfile: Dockerfile
